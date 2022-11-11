@@ -22,6 +22,14 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Installation steps
+-  ``npm i bootstrap``
+-  ``npm i jquery``
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+STEP 1.
+- Go inside angular.json file and inside "architect" inside build add bootstrap css in styles
+- ``"./node_modules/bootstrap/dist/css/bootstrap.min.css"`` includes this styles array
+- ``"./node_modules/bootstrap/dist/js/bootstrap.min.js"``   includes in the scripts
+
+STEP 2:
+- ``ng generate component components/Todos`` for create component folder
