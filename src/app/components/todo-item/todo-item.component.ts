@@ -8,7 +8,10 @@ import { Todo } from 'src/app/Todo';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo!: Todo;
+  @Input() index!:number;
   @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
+  @Output() todosCheckBox: EventEmitter<Todo> = new EventEmitter();
+
 
   constructor() {}
 
@@ -17,5 +20,9 @@ export class TodoItemComponent implements OnInit {
   onClick(todo: Todo) {
     this.todoDelete.emit(todo);
     console.log('has ben trigered');
+  }
+  checkboxClick(todo: Todo) {
+    console.log("dfjslkd",todo)
+    this.todosCheckBox.emit(todo)
   }
 }

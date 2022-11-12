@@ -7,7 +7,6 @@ import { Todo } from '../../Todo';
   styleUrls: ['./todos.component.scss'],
 })
 export class TodosComponent implements OnInit {
-
   localItem: string;
   todos!: Todo[];
 
@@ -23,14 +22,19 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {}
 
   deleteTodo(todo: any) {
-    console.log(todo);
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1); // delete index and how much element delte
-    localStorage.setItem("todos",JSON.stringify(this.todos))
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
   addTodo(todo: Todo) {
     this.todos.push(todo);
-    localStorage.setItem("todos",JSON.stringify(this.todos))
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
+
+  checkedTodo(todo: Todo) {
+    const index = this.todos.indexOf(todo);
+    this.todos[index].active = !this.todos[index].active;
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 }
